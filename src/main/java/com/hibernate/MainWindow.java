@@ -6,7 +6,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class MainWindow extends JFrame implements ActionListener{
-    private JPanel main = new JPanel(new GridLayout(2, 2));
+
+    private JPanel main = new JPanel(new GridLayout(2,2));
 
     private JButton b1 = new JButton("List users");
     private JButton b2 = new JButton("Add user");
@@ -20,11 +21,25 @@ public class MainWindow extends JFrame implements ActionListener{
         setVisible(true);
         setBackground(Color.white);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        add(main);
+        setLocationRelativeTo(null);
         main.add(b1);
         main.add(b2);
         main.add(b3);
         main.add(b4);
+        b1.setBackground(Color.white);
+        b1.setForeground(Color.black);
+        b2.setBackground(Color.white);
+        b2.setForeground(Color.black);
+        b3.setBackground(Color.white);
+        b3.setForeground(Color.black);
+        b4.setBackground(Color.white);
+        b4.setForeground(Color.black);
+        add(main);
+        b1.addActionListener(this);
+        b2.addActionListener(this);
+        b3.addActionListener(this);
+        b4.addActionListener(this);
+
     }
 
     public static void main(String[] args) {
