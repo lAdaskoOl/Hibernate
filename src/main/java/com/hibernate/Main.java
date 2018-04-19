@@ -69,6 +69,14 @@ public class Main {
 
     //add a user
     public Integer addUser(String fname, String lname) {
+
+        try {
+            factory = new Configuration().configure().buildSessionFactory();
+        } catch (Throwable ex) {
+            System.err.println("Failed to create sessionFactory object." + ex);
+            throw new ExceptionInInitializerError(ex);
+        }
+
         Session session = factory.openSession();
         Transaction tx = null;
         Integer userID = null;
@@ -89,6 +97,14 @@ public class Main {
 
     //update user
     public void updateUser(Integer userID, String name){
+
+        try {
+            factory = new Configuration().configure().buildSessionFactory();
+        } catch (Throwable ex) {
+            System.err.println("Failed to create sessionFactory object." + ex);
+            throw new ExceptionInInitializerError(ex);
+        }
+
         Session session = factory.openSession();
         Transaction tx = null;
 
@@ -108,6 +124,14 @@ public class Main {
 
     // get users from db
     public void listUsers( ){
+
+        try {
+            factory = new Configuration().configure().buildSessionFactory();
+        } catch (Throwable ex) {
+            System.err.println("Failed to create sessionFactory object." + ex);
+            throw new ExceptionInInitializerError(ex);
+        }
+
         Session session = factory.openSession();
         Transaction tx = null;
 
@@ -132,6 +156,14 @@ public class Main {
 
     // Method to DELETE an employee from the records
     public void deleteUser(Integer UserID){
+
+        try {
+            factory = new Configuration().configure().buildSessionFactory();
+        } catch (Throwable ex) {
+            System.err.println("Failed to create sessionFactory object." + ex);
+            throw new ExceptionInInitializerError(ex);
+        }
+
         Session session = factory.openSession();
         Transaction tx = null;
 

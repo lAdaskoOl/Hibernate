@@ -54,12 +54,14 @@ public class MainWindow extends JFrame implements ActionListener{
         }
         else if(actionEvent.getSource() == b2) {
             //open new window
+            new AddWindow();
         }
         else if(actionEvent.getSource() == b3) {
             //open new window
         }
         else {
             //open new window
+            new DeleteWindow();
         }
     }
 }
