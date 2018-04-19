@@ -5,25 +5,28 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class DeleteWindow extends JFrame implements ActionListener {
+public class ChangeWindow extends JFrame implements ActionListener {
 
+    private TextField id, newName;
+    private JButton button = new JButton("Update user");
     private JPanel panel = new JPanel();
-    private TextField id = new TextField("ID number");
-    private JButton button = new JButton("Delete user with given ID");
 
-    public DeleteWindow() {
+    public ChangeWindow() {
         setSize(250, 200);
         setResizable(false);
-        setTitle("Delete user");
+        setTitle("Update User");
         setVisible(true);
         setBackground(Color.white);
         setLocationRelativeTo(null);
 
-        panel.setBackground(Color.white);
+        id = new TextField("User's ID");
+        newName = new TextField("New name");
         id.setBounds(100, 100, 50, 20);
-        button.setBounds(100, 200, 100, 20);
+        newName.setBounds(100, 300, 100, 20);
+        button.setBounds(100, 400, 100,20);
         button.addActionListener(this);
         panel.add(id);
+        panel.add(newName);
         panel.add(button);
         add(panel);
     }
@@ -31,9 +34,10 @@ public class DeleteWindow extends JFrame implements ActionListener {
     public void actionPerformed(ActionEvent actionEvent) {
         if(actionEvent.getSource() == button) {
             String tx = id.getText();
-            int IntId = Integer.parseInt(tx);
+            int IntID = Integer.parseInt(tx);
+            String name = newName.getText();
             Main maincall = new Main();
-            maincall.deleteUser(IntId);
+            maincall.updateUser(IntID, name);
         }
     }
 }

@@ -12,12 +12,11 @@ public class AddWindow extends JFrame implements ActionListener {
     private JButton button = new JButton("Add user");
 
     public AddWindow() {
-        setSize(250, 500);
+        setSize(250, 200);
         setResizable(false);
         setTitle("Add user");
         setVisible(true);
         setBackground(Color.white);
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
 
         fname = new JTextField("Add first name");
